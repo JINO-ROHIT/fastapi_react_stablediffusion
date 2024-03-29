@@ -1,0 +1,1 @@
+# fastapi_react_stablediffusion
