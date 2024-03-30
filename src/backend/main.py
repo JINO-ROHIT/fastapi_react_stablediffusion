@@ -42,8 +42,15 @@ app = FastAPI(
     version = '0.1',
     lifespan = lifespan
 )
+
+
 app.add_middleware(
-    GlobalsMiddleware,
+    #GlobalsMiddleware,
+    CORSMiddleware,
+    allow_origins = ["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 @app.get("/")
