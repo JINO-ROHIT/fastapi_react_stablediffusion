@@ -1,0 +1,120 @@
+/* Overall container */
+.gen-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* Form section */
+  .gen-image-form {
+    width: 50%; 
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  .gen-image-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Preview section */
+  .gen-image-preview {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Image container */
+  .gen-image-preview figure {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden; 
+  }
+  
+  /* Error message (if needed) */
+  .error-message {
+    color: #c00; 
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Fields */
+  .field {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Label */
+  .label {
+    color: #333; /* Dark gray color */
+    font-weight: bold;
+    flex: 0 0 30%;
+    text-align: right;
+    margin-right: 10px;
+  }
+  
+  /* Input  */
+  .input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-bottom: 2px solid #007bff; 
+  }
+  
+  /* Input on focus (highlight with blue) */
+  .input:focus {
+    border: 1px solid #007bff; /* Change entire border to blue on focus */
+  }
+  
+  /* Button */
+  .button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #007bff; /* Primary blue color */
+    color: #fff; /* White color */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+  }
+  
+  /* Progress bar */
+  .progress {
+    width: 100%;
+    height: 5px;
+    background-color: #ddd; /* Light gray background */
+    border-radius: 5px;
+    overflow: hidden;
+    display: none; /* Initially hide the progress bar */
+  }
+  
+  .progress::before {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: #007bff; /* Progress bar color */
+    transition: width 
+  }
