@@ -1,6 +1,6 @@
 import io
 from contextlib import asynccontextmanager
-from typing import Any, Dict, List, Optional
+from typing import Dict, Optional
 
 import torch
 from diffusers import AutoencoderKL, LMSDiscreteScheduler, UNet2DConditionModel
@@ -9,10 +9,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from loguru import logger
 from PIL import Image
-from schema import Parameters
 from tqdm.auto import tqdm
 from transformers import CLIPTextModel, CLIPTokenizer
-from utils.fastapi_globals import GlobalsMiddleware, g
+from utils.fastapi_globals import g
 
 
 torch_device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -45,7 +44,6 @@ app = FastAPI(
 
 
 app.add_middleware(
-    #GlobalsMiddleware,
     CORSMiddleware,
     allow_origins = ["*"],
     allow_credentials=True,
@@ -104,5 +102,4 @@ async def predict(prompt: str, batch_size:int = 1, num_inference_steps:Optional[
     pil_images[0].save(memory_stream, format="PNG")
     memory_stream.seek(0)
     return StreamingResponse(memory_stream, media_type="image/png")
-    #return pil_images[0]
 
