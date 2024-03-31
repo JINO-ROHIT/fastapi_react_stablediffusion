@@ -1,0 +1,10 @@
+accelerate==0.28.0
+diffusers==0.27.2
+fastapi==0.110.0
+loguru==0.7.2
+pydantic==2.6.4
+starlette==0.36.3
+torch==2.2.2+cu121
+tqdm==4.66.2
+transformers==4.39.2
+uvicorn==0.29.0
